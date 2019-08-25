@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=3, user-scalable=yes">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="../components/loader.css">
+    <script src="../components/loader.js"></script>
+
+    <link rel="stylesheet" href="../css/quiz_scene.css">
+    <script type="text/javascript" src="../js/quiz_scene.js"></script>
+    <script type="text/javascript" src="../components/monaca-jquery/jquery.js"></script>
+    <script src="dist/gauge.js"></script>
+    <title>クイズ</title>
+</head>
+<body>
+
+<div id="title_q">
+  <div class="quiz_box">
+    <h2 id="quiz_title">Quiz 1</h2>
+  </div>
+  </div>
+  <div id="correct">
+    <div id="correctans">
+      何問正解！
+    </div>
+    <br>
+    
+    <a href ="#" onclick="correct_ans()" id="correct_link">
+      <div id ="correct_back">クイズ戻る
+      </div>
+    </a>
+    <a href ="quiztop.html" id="back_link">
+      <div id ="end_back">play again!</div>
+    </a>
+  </div>
+  <div id ="quiz-main">
+  <p id="question">
+    問題文
+  </p>
+  <form name="ansform">
+  <p>answer :<br>
+  <input type="text" name="answer">
+  <input type="button" value="SUBMIT" onclick="submit_answer()"></p>
+  </form>
+  <br>
+  <div align="center">
+    <button class="btn_hint" onclick="hint1()">hint 1</button>
+    <button class="btn_hint" onclick="hint2()">hint 2</button>
+    <button class="btn_hint" onclick="hint3()">hint 3</button>
+    <button class="btn_hint" onclick="hint4()">hint 4</button>
+  </div>
+  </div>
+
+  <div id="hint-main">
+    <div id="hint-contnets">
+      ヒントだよ
+    </div>
+    <br>
+    <a href="#" onclick="btn_quiz()">back to quiz</a>
+  </div>
+
+  <div id="loader-bg">
+    <div id="loader">
+    	<br>
+	    <br>
+    	<div align ="center">
+	      <!--<img src="../img/loader.gif">-->
+        <span id="gauge-value"></span>%<br>
+        <canvas id ="gauge_canvas"></canvas>
+	      <p>Now Loading...</p>
+	      <br>
+	      <p>
+          You have reached the data limit.<br> 
+	        <!--通信速度が制限されています<br>-->
+          <!--通信速度 0.15 Mbps<br>-->
+	      </p>
+	      <br>
+        <a href="#" onclick="back_to_quiz()">back to quiz</a>
+      </div>
+    </div>
+  </div>
+  <div id="skull">
+    <div align="center">
+      <br>
+      <br>
+      <img src="../img/skull.png">
+    <br>
+    <a href="#" onclick="back_to_quiz()">back to quiz</a>
+  </div>
+ </div>
+
+<!-- pop up 
+<div class="popup-overlay">
+   <div class="popup-content">
+      <h2>Pop-Up</h2>
+      <p id="hint"> あいうえお</p>
+      <button class="close">閉じる</button>
+  </div>
+</div>
+-->
+</body>
+</html>
